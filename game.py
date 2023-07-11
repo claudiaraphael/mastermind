@@ -33,3 +33,19 @@ def guess_code():
                 break
     return guess
 
+# compare the guess
+# check the code
+def check_code(guess, real_code):
+    # check colors in correct position
+    # check color in incorrect position
+    color_counts = {}
+    correct_pos = 0
+    incorrect_pos = 0
+
+    for color in real_code:
+        if color not in color_counts:
+            color_counts[color] = 0
+        color_counts[color] += 1
+    # put the guess colors in a tuple so you can compare them to the real color in another tuple. 
+    # create tuples with zip function.
+    for guess_color, real_color in zip(guess, real_code):
